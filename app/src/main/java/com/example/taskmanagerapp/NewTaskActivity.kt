@@ -49,10 +49,10 @@ class NewTaskActivity : AppCompatActivity() {
     fun createButtonClicked(view: View) {
 
         val taskName: String = if (nameEditText.text.toString() != "") nameEditText.text.toString()
-            else {
-                Toast.makeText(this, "name is empty", LENGTH_SHORT).show()
-                return
-            }
+        else {
+            Toast.makeText(this, "name is empty", LENGTH_SHORT).show()
+            return
+        }
 
         val category: TaskCategory = when(categoryButtonText.text.toString()) {
             "JOB" -> TaskCategory.CATEGORY_JOB

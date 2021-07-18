@@ -77,7 +77,7 @@
             app:layout_constraintEnd_toStartOf="@+id/ecategoryButtonText"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/ecategoryTextView"
-            android:onClick="backArrowClicked"/>
+            android:onClick="ebackArrowClicked"/>
 
         <Button
             android:id="@+id/ecategoryButtonText"
@@ -99,7 +99,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/ecategoryButtonText"
-            android:onClick="forwardArrowClicked"/>
+            android:onClick="eforwardArrowClicked"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

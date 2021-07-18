@@ -19,6 +19,7 @@
         <activity android:name=".NewTaskActivity"/>
         <activity android:name=".AboutActivity"/>
         <activity android:name=".SettingsActivity"/>
+        <activity android:name=".EditTaskActivity"/>
     </application>
 
 </manifest>

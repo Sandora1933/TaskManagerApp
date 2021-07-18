@@ -35,9 +35,50 @@ class MainActivity : AppCompatActivity(), TaskAdapter.OnItemClickListener {
 
     val activityLauncher = registerForActivityResult(CreateTaskContract()) { result ->
         val task: Task = Gson().fromJson(result, taskType)
+
         taskList.add(task)
         Toast.makeText(this, taskList.size.toString(), Toast.LENGTH_SHORT).show()
         adapter.notifyDataSetChanged()
+
+        if (taskList.size == 0){
+            emptyTextView.text = "Empty list..."
+        }
+        else{
+            emptyTextView.text = ""
+        }
+    }
+
+    val editActivityLauncher = registerForActivityResult(EditTaskContract()){ result ->
+        if (result.equals("delete")){
+            val index: Int = getSharedPreferences("storage", Context.MODE_PRIVATE).getInt("my_input_key", 0)
+            taskList.removeAt(index)
+            adapter.notifyDataSetChanged()
+
+            if (taskList.size == 0){
+                emptyTextView.text = "Empty list..."
+            }
+            else{
+                emptyTextView.text = ""
+            }
+        }
+        else {
+            val task: Task = Gson().fromJson(result, taskType)
+
+            val index: Int = getSharedPreferences("storage", Context.MODE_PRIVATE).getInt("my_input_key", 0)
+
+//            var prev: Task = taskList.get(index)
+//            prev = task
+            taskList[index] = task
+            Toast.makeText(this, taskList.size.toString(), Toast.LENGTH_SHORT).show()
+            adapter.notifyDataSetChanged()
+
+            if (taskList.size == 0){
+                emptyTextView.text = "Empty list..."
+            }
+            else{
+                emptyTextView.text = ""
+            }
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -102,11 +143,17 @@ class MainActivity : AppCompatActivity(), TaskAdapter.OnItemClickListener {
         }
     }
 
+    private fun editTask(pos: Int){
+        if (pos in 0..taskList.size){
+            editActivityLauncher.launch(pos)
+        }
+    }
+
     fun floatingButtonClicked(view: View) {
         activityLauncher.launch(10)
     }
 
     override fun onItemClick(pos: Int) {
-        Toast.makeText(this, "" + pos, Toast.LENGTH_SHORT).show()
+        editTask(pos)
     }
 }
