@@ -7,11 +7,11 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/newTaskTextView"
+        android:id="@+id/editTaskTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Create new Task"
+        android:text="Edit Task"
         android:textColor="#000"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,16 +19,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/nameLayout"
+        android:id="@+id/enameLayout"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newTaskTextView"
+        app:layout_constraintTop_toBottomOf="@+id/editTaskTextView"
         android:layout_margin="10dp">
 
         <TextView
-            android:id="@+id/nameTextView"
+            android:id="@+id/enameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name: "
@@ -38,28 +38,28 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/nameEditText"
+            android:id="@+id/enameEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="Task name here..."
             android:textColor="#000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/nameTextView" />
+            app:layout_constraintStart_toEndOf="@+id/enameTextView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/categoryLayout"
+        android:id="@+id/ecategoryLayout"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameLayout">
+        app:layout_constraintTop_toBottomOf="@id/enameLayout">
 
         <TextView
-            android:id="@+id/categoryTextView"
+            android:id="@+id/ecategoryTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Category: "
@@ -69,51 +69,51 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/backImageButton"
+            android:id="@+id/ebackImageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_arrow_back_24"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/categoryButtonText"
+            app:layout_constraintEnd_toStartOf="@+id/ecategoryButtonText"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/categoryTextView"
+            app:layout_constraintStart_toEndOf="@+id/ecategoryTextView"
             android:onClick="backArrowClicked"/>
 
         <Button
-            android:id="@+id/categoryButtonText"
+            android:id="@+id/ecategoryButtonText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="false"
             android:text="JOB"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/forwardImageButton"
+            app:layout_constraintEnd_toStartOf="@+id/eforwardImageButton"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/backImageButton" />
+            app:layout_constraintStart_toEndOf="@+id/ebackImageButton" />
 
         <ImageButton
-            android:id="@+id/forwardImageButton"
+            android:id="@+id/eforwardImageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_arrow_forward_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/categoryButtonText"
+            app:layout_constraintStart_toEndOf="@+id/ecategoryButtonText"
             android:onClick="forwardArrowClicked"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/deadlineLayout"
+        android:id="@+id/edeadlineLayout"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        app:layout_constraintTop_toBottomOf="@id/categoryLayout"
+        app:layout_constraintTop_toBottomOf="@id/ecategoryLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="10dp">
 
         <TextView
-            android:id="@+id/deadlineTextView"
+            android:id="@+id/edeadlineTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Deadline: "
@@ -125,16 +125,16 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/descriptionLayout"
+        android:id="@+id/edescriptionLayout"
         android:layout_width="match_parent"
-        android:layout_height="230dp"
+        android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deadlineLayout"
+        app:layout_constraintTop_toBottomOf="@+id/edeadlineLayout"
         android:layout_margin="10dp">
 
         <TextView
-            android:id="@+id/descriptionTextView"
+            android:id="@+id/edescriptionTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Description: "
@@ -144,7 +144,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/edtInput"
+            android:id="@+id/eedtInput"
             android:layout_width="0dip"
             android:layout_height="0dp"
             android:hint="Here is your description"
@@ -154,38 +154,49 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/edescriptionTextView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/confirmButton"
+        android:id="@+id/econfirmButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="30dp"
-        android:onClick="createButtonClicked"
-        android:text="create task"
+        android:onClick="editButtonClicked"
+        android:text="edit task"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/edescriptionLayout" />
 
-<!--    <EditText-->
-<!--        android:id="@+id/editText"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:hint="Enter task name here..."-->
-<!--        android:textColor="#000"-->
-<!--        android:textSize="25sp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/textView" />-->
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="deleteButtonClicked"
+        android:text="delete task"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/econfirmButton" />
 
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Category"-->
+    <!--    <EditText-->
+    <!--        android:id="@+id/editText"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:hint="Enter task name here..."-->
+    <!--        android:textColor="#000"-->
+    <!--        android:textSize="25sp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/textView" />-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Category"-->
 
 
 

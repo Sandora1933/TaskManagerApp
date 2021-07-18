@@ -3,12 +3,12 @@ package com.example.taskmanagerapp
 class Task {
     var taskName: String
     var taskCategory: TaskCategory
-    var deadline: Int
-    var status: Status
+    var deadline: String
+    var status: Status = Status.STATUS_EXPIRED
     var description: String
 
     // Full fields constructor
-    constructor(taskName: String, taskCategory: TaskCategory, deadline: Int,
+    constructor(taskName: String, taskCategory: TaskCategory, deadline: String,
                 status: Status, description: String) {
         this.taskName = taskName
         this.taskCategory = taskCategory
@@ -17,26 +17,8 @@ class Task {
         this.description = description
     }
 
-    // Except description
-    constructor(taskName: String, taskCategory: TaskCategory, deadline: Int, status: Status) {
-        this.taskName = taskName
-        this.taskCategory = taskCategory
-        this.deadline = deadline
-        this.status = status
-        description = "No description"
-    }
-
-    // Without description, category
-    constructor(taskName: String, deadline: Int, status: Status) {
-        this.taskName = taskName
-        taskCategory = TaskCategory.CATEGORY_NOT_SPECIFIED
-        this.deadline = deadline
-        this.status = status
-        description = "No description"
-    }
-
     // Just name, deadline
-    constructor(taskName: String, deadline: Int) {
+    constructor(taskName: String, deadline: String) {
         this.taskName = taskName
         taskCategory = TaskCategory.CATEGORY_NOT_SPECIFIED
         this.deadline = deadline
@@ -44,6 +26,14 @@ class Task {
         description = "No description"
     }
 
+    constructor(taskName: String, category: TaskCategory, deadline: String, description: String){
+        this.taskName = taskName
+        this.taskCategory = category
+        this.deadline = deadline
+        this.description = description
+    }
 
-
+    override fun toString(): String {
+        return "Obj: $taskName $description"
+    }
 }

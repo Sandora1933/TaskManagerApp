@@ -7,15 +7,32 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class TaskAdapter(private val taskList: List<Task>) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
+class TaskAdapter(private val taskList: ArrayList<Task>, val listener: OnItemClickListener)
+    : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
-    val list: List<Task> = listOf()
-
-    class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    inner class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
+    View.OnClickListener {
         val taskNameTextView: TextView = itemView.findViewById(R.id.taskName)
         val taskCategoryTextView: TextView = itemView.findViewById(R.id.taskCategory)
         val deadlineTextView: TextView = itemView.findViewById(R.id.deadlineTextView)
         val statusImageView: ImageView = itemView.findViewById(R.id.statusView)
+
+        init {
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            val position: Int = bindingAdapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                listener.onItemClick(position)
+            }
+        }
+
+
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(pos: Int)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
