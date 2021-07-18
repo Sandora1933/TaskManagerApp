@@ -1,9 +1,9 @@
-package com.example.taskmanagerapp
+package com.example.taskmanagerapp.contract
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import androidx.activity.result.contract.ActivityResultContract
+import com.example.taskmanagerapp.activity.EditTaskActivity
 
 class EditTaskContract : ActivityResultContract<Int, String>() {
 

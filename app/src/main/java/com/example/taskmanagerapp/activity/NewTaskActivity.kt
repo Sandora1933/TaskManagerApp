@@ -1,19 +1,19 @@
-package com.example.taskmanagerapp
+package com.example.taskmanagerapp.activity
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
-import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
-import android.widget.Toast.LENGTH_LONG
 import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AppCompatActivity
+import com.example.taskmanagerapp.R
+import com.example.taskmanagerapp.model.Task
+import com.example.taskmanagerapp.model.TaskCategory
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_create_task.*
 
@@ -66,7 +66,13 @@ class NewTaskActivity : AppCompatActivity() {
         val deadline: String = "12.07"
         val description: String = descriptionTextView.text.toString()
 
-        val task: Task = Task(taskName, category, deadline, description)
+        val task: Task =
+            Task(
+                taskName,
+                category,
+                deadline,
+                description
+            )
 
         val resultIntent: Intent = Intent()
         val taskJson: String = Gson().toJson(task)

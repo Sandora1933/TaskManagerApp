@@ -1,17 +1,17 @@
-package com.example.taskmanagerapp
+package com.example.taskmanagerapp.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.taskmanagerapp.R
 
-class SettingsActivity : AppCompatActivity() {
+class AboutActivity : AppCompatActivity(){
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_settings)
+        setContentView(R.layout.activity_about)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

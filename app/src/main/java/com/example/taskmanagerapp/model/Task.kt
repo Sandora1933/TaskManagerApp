@@ -1,10 +1,11 @@
-package com.example.taskmanagerapp
+package com.example.taskmanagerapp.model
 
 class Task {
     var taskName: String
     var taskCategory: TaskCategory
     var deadline: String
-    var status: Status = Status.STATUS_EXPIRED
+    var status: Status =
+        Status.STATUS_EXPIRED
     var description: String
 
     // Full fields constructor
@@ -20,7 +21,8 @@ class Task {
     // Just name, deadline
     constructor(taskName: String, deadline: String) {
         this.taskName = taskName
-        taskCategory = TaskCategory.CATEGORY_NOT_SPECIFIED
+        taskCategory =
+            TaskCategory.CATEGORY_NOT_SPECIFIED
         this.deadline = deadline
         status = Status.STATUS_IN_PROCESS
         description = "No description"

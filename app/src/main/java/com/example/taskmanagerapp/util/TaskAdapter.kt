@@ -1,4 +1,4 @@
-package com.example.taskmanagerapp
+package com.example.taskmanagerapp.util
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.taskmanagerapp.R
+import com.example.taskmanagerapp.model.Status
+import com.example.taskmanagerapp.model.Task
+import com.example.taskmanagerapp.model.TaskCategory
 
 class TaskAdapter(private val taskList: ArrayList<Task>, val listener: OnItemClickListener)
     : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
@@ -36,7 +40,8 @@ class TaskAdapter(private val taskList: ArrayList<Task>, val listener: OnItemCli
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
-        val itemView: View = LayoutInflater.from(parent.context).inflate(R.layout.card_item,
+        val itemView: View = LayoutInflater.from(parent.context).inflate(
+            R.layout.card_item,
             parent, false)
         return TaskViewHolder(itemView)
     }

@@ -1,4 +1,4 @@
-package com.example.taskmanagerapp
+package com.example.taskmanagerapp.model
 
 enum class TaskCategory {
     CATEGORY_JOB, CATEGORY_STUDY, CATEGORY_SOCIAL, CATEGORY_HOME,

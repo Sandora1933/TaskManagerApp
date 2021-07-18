@@ -1,4 +1,4 @@
-package com.example.taskmanagerapp
+package com.example.taskmanagerapp.activity
 
 import android.content.Context
 import android.content.Intent
@@ -6,22 +6,22 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
-import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.Nullable
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.taskmanagerapp.R
+import com.example.taskmanagerapp.util.TaskAdapter
+import com.example.taskmanagerapp.contract.CreateTaskContract
+import com.example.taskmanagerapp.contract.EditTaskContract
+import com.example.taskmanagerapp.model.Task
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_main.*
-import java.lang.reflect.Type
-import kotlin.reflect.typeOf
 
-class MainActivity : AppCompatActivity(), TaskAdapter.OnItemClickListener {
+class MainActivity : AppCompatActivity(),
+    TaskAdapter.OnItemClickListener {
 
 //    val recyclerView: RecyclerView? = null
 //    val recyclerViewAdapter: TaskAdapter? = null
